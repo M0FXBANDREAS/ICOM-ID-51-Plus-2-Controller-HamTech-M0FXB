@@ -1,0 +1,49 @@
+{
+  "name": "hamtec-id51-desktop",
+  "version": "0.2.2",
+  "description": "Offline desktop CI-V control desk for Icom ID-51 Plus2",
+  "main": "main.cjs",
+  "private": true,
+  "author": "HamTec",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/protocol.cjs && node tests/package.cjs && node tests/ports.cjs && node --check main.cjs && node --check preload.cjs && node --check ui/app.js",
+    "dist:win": "electron-builder --win zip --x64",
+    "dist:linux": "electron-builder --linux tar.gz --x64",
+    "dist:mac": "electron-builder --mac zip --x64 --arm64"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.hamtec.id51",
+    "productName": "HamTec ID51 Control",
+    "asar": true,
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "ui/**/*",
+      "package.json",
+      "README.md",
+      "LICENSE"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "zip",
+      "signAndEditExecutable": false
+    },
+    "linux": {
+      "target": "tar.gz",
+      "category": "Utility"
+    },
+    "mac": {
+      "target": "zip",
+      "category": "public.app-category.utilities"
+    },
+    "artifactName": "HamTec-ID51-${version}-${os}-${arch}.${ext}",
+    "compression": "normal"
+  }
+}
