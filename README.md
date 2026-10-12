@@ -1,3 +1,7 @@
+
+
+
+
 # HamTec ID51 Control — desktop edition
 
 A colourful, offline desktop control desk for the **Icom ID-51A / ID-51E Plus2**. The front panel uses the exact user-supplied radio photograph with transparent clickable hotspots over the pictured controls. The LCD area displays workspace or received radio data.
